@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-public class Unit1Exercise {
+public class Unit1Exercise_BeforeJava8 {
 	public static void main(String[] args) {
 		
 		List<Person> people = Arrays.asList(
