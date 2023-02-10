@@ -6,6 +6,12 @@ import java.util.Comparator;
 import java.util.List;
 
 public class ComparatorMain {
+	
+	public static int compare(Movie m1, Movie m2) {
+		
+		return m1.getName().compareTo(m2.getName());
+		
+		}
 	public static void main(String[] args) {
 		
 		List<Movie> movies = Arrays.asList(
@@ -16,13 +22,16 @@ public class ComparatorMain {
 				);
 		
 		System.out.println("Movies listed are: " + movies.toString());
-			
+		
+		Collections.sort(movies, ComparatorMain::compare);
+		System.out.println("Movies listed using method referance are: " + movies.toString());
+		
 		System.out.println("Sorting based on rating");
 		Collections.sort(movies, new RatingCompare());
 		System.out.println("Movies listed are: " + movies.toString());
 		
 		System.out.println("Sorting based on name");
-		Collections.sort(movies, new NameCompare());
+		Collections.sort(movies, NameCompare::compare);
 		System.out.println("Movies listed are: " + movies.toString());
 		
 		System.out.println("Sorting based on year");

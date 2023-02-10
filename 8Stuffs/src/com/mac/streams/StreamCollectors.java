@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Random;
 import java.util.stream.Collectors;
 
@@ -44,7 +45,19 @@ public class StreamCollectors {
 		System.out.print("Extracting Average from IntSummaryStatistics = ");
 		System.out.println(integers.stream().collect(Collectors.summarizingInt(Integer::intValue)).getAverage());
 		
+		System.out.println("Grouping by..");
 		Map<Integer, List<Integer>> map = integers.stream().collect(Collectors.groupingBy(Integer::intValue));
 		System.out.println(map.toString());
+		
+		System.out.println("Partioning by..");
+		Map<Boolean, List<Integer>> map2 = integers.stream().collect(Collectors.partitioningBy( (a) -> a > 10));
+		System.out.println(map2.toString());
+		
+		System.out.println("teeing by..");
+		Optional<Integer> res1 = integers.stream().collect(Collectors.minBy(Integer::compareTo));
+		System.out.println(res1.get());
+		
+		Optional<Integer> res2 = integers.stream().collect(Collectors.maxBy(Integer::compareTo));
+		System.out.println(res2.get());
 	}
 }

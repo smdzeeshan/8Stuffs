@@ -17,12 +17,16 @@ public class StreamReduction {
 		System.out.println(newString.get());
 		
 		/* sum_operation */
-		List<Integer> numbers = Arrays.asList(1,2,3,4,5,6,7);
+		List<Integer> numbers = Arrays.asList();
 		Optional<Integer> sum = numbers.stream().reduce((a ,b) -> a + b); // or Integer::sum
 		if (sum.isPresent())
 			System.out.println(sum.get());
 		
+		
+		
 		/* average */
+		
+		
 		int average = numbers.stream().reduce((a,b) -> a+b).orElse(0) / numbers.size();
 		System.out.println(average);
 		

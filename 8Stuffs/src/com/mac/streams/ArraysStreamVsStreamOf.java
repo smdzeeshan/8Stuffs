@@ -1,6 +1,7 @@
 package com.mac.streams;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
@@ -23,5 +24,8 @@ public class ArraysStreamVsStreamOf {
 		// Arrays.stream(carr);
 		Stream<char[]> cstream = Stream.of(carr);
 		cstream.forEach(a -> System.out.println(a));
+		
+		List<String> bikeBrands = Arrays.asList("Giant", "Scott", "Trek", "GT");
+		Stream<List<String>> listnew = Stream.of(bikeBrands);
 	}
 }
