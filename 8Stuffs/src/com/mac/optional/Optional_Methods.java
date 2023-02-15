@@ -26,6 +26,17 @@ public class Optional_Methods {
         System.out.println(filteredString.isPresent());
         System.out.println("Nullable Optional: " + Optional.ofNullable(filteredString.get())); 
         System.out.println(filteredString2.orElse("No string"));
+        
+        // No value vs null value
+        System.out.println("**** No value vs null value*****");
+        String str5 = "";
+        Optional<String> stroptional = Optional.ofNullable(str5);
+        if (stroptional.isPresent()) {
+        	System.out.println("date = " + stroptional.get());
+        }
+        String resX =  stroptional.orElse("empty");
+        System.out.println("resX = " + resX);
+        
 	}
 
 }
