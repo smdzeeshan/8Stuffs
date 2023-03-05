@@ -1,4 +1,4 @@
-package com.mac;
+package com.mac.ExecutorServiceLearn;
 
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
